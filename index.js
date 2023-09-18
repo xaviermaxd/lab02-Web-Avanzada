@@ -27,6 +27,17 @@ app.post('/formulario', (req, res) => {
     res.send('Reclamo guardado!!!');
 });
 
+
+app.get('/usuario', (req, res) => { 
+    res.sendFile('./scripts/usuario.html', {
+        root: __dirname
+    })
+});
+
+app.put('/usuario', (req, res) => { 
+    res.send('Peticion Actualizacion de datos de usaurio');
+});
+
 app.use((req,res) => {
     res.status(404).send('No se encontro tu pagina....!!!')
 })
